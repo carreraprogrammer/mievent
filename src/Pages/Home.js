@@ -1,10 +1,11 @@
 import { NavLink } from 'react-router-dom';
 
 const Home =  () => {
+    const countries = ['US', 'CA', 'GB', 'ZA', 'ES']
     return (
       <>
         <h1>The home page is working</h1>
-        <NavLink to='./Country' end>This button should conduce to the Country page</NavLink>
+        {countries.map((country) =>  <NavLink to={`./${country}`} end> {country} page</NavLink> )}
       </>
     )
 }
