@@ -30,4 +30,4 @@ export const getEvents = createAsyncThunk(
   }
 )
 
-const initialState = {data: []}
+const initialState = {country: 'US', data: []}
