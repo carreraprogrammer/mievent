@@ -13,10 +13,11 @@ const Country = () => {
   const events = useSelector((state) => state.Events.data)
   const parameters = useSelector((state) => state.Events.parameters)
 
+  console.log(parameters)
+
   useEffect(() => {
-    if (events.length === 0) {
-      dispatch(getEvents(parameters));
-    }
+    if (events.length >= 0) {
+      dispatch(getEvents(parameters));}
   });
 
     return (
