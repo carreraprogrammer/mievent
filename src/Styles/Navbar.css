@@ -1,0 +1,57 @@
+.navigationLink {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.navigationLink:hover {
+  transform: scale(1.1);
+  color: red;
+}
+
+nav {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  border-bottom: 2px solid red;
+  justify-content: space-between;
+}
+
+#logo {
+  height: 40px;
+  margin-top: 10px;
+  padding-right: 24px;
+}
+
+#navigation {
+  display: none;
+}
+
+.currentPage {
+  color: red;
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  nav {
+    height: 70px;
+  }
+
+  #navigation {
+    display: block;
+    width: 30%;
+    padding-right: 5%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #logo {
+    height: 60px;
+  }
+
+  #burgerContainer {
+    display: none;
+  }
+}
