@@ -18,7 +18,7 @@ const countryCode = 'ES'
 
 // The web page doesn't provide information of the countries that are available with the API, so I will do it manually creating an array
 
-const availableCountries = ['US', 'CA', 'GB', 'ZA', 'ES']
+const availableCountries = ['US', 'CA', 'GB', 'ZA', 'ES', 'AU']
 
 const eventsArray = async () => {
     const events = await fetch (`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${countryCode}&apikey=PGGUMOvxBDA4IqUYAvrgPbbdizZEGw9i&locale=*&page=${page}`)

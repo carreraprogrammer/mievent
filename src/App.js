@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import Country from './Pages/Country';
 import Home from './Pages/Home';
 import EventInfo from './Pages/EventInfo';
+import './App.css'
 
 const App = () => {
   return(
