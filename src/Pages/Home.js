@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { VscFoldDown } from 'react-icons/vsc';
 import { useDispatch, useSelector } from 'react-redux';
-import { filterCountry, getEvents } from '../Redux/EventsSlice';
+import { filterCountry } from '../Redux/EventsSlice';
 import '../Styles/Home.css'
 
 const Home =  () => {
