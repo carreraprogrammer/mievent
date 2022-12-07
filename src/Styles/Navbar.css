@@ -17,6 +17,7 @@ nav {
   padding-left: 5%;
   border-bottom: 2px solid red;
   justify-content: space-between;
+  width: 100%;
 }
 
 #logo {
