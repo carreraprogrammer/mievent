@@ -11,10 +11,11 @@ const Country = () => {
  
   
   const events = useSelector((state) => state.Events.data)
+  const parameters = useSelector((state) => state.Events.parameters)
 
   useEffect(() => {
     if (events.length === 0) {
-      dispatch(getEvents());
+      dispatch(getEvents(parameters));
     }
   });
 
@@ -26,9 +27,10 @@ const Country = () => {
         </form>
         <div id='eventsGrid'>
         {events.map((event) => (
-          <div className='eventCard'>
-            <img src={event.cardImage} alt='event' style={{width: '300px', height: '200px'}}/>
-            <h3 key={event.id}>{event.name}</h3>
+          <div className='eventCard' key={event.id}>
+            <img src={event.cardImage} alt='event' style={{width: '125px', height: '60px'}}/>
+            <h5 >{event.name}</h5>
+            <p>{event.genre}</p>
           </div>
           ))}
         </div>

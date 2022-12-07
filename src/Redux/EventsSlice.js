@@ -29,13 +29,19 @@ export const getEvents = createAsyncThunk(
   }
 )
 
-const initialState = {country: 'US', data: [], page: '20'}
+const initialState = {parameters: {countryCode: 'US', page: 5}, data: [] }
 
 const eventsSlice = createSlice(
   {
     name: 'events',
     initialState,
-    reducers: {},
+    reducers: {
+      filterCountry(state, {payload}) {
+        return state = {...state, parameters: payload}
+      },
+      openEvent(state, {payload}) {return payload},
+
+    },
     extraReducers: (Builder) => {
         Builder.addCase(getEvents.fulfilled, (state, action) => {
             state.data = action.payload;
@@ -44,4 +50,5 @@ const eventsSlice = createSlice(
   }
 )
 
-export default eventsSlice.reducer
+export default eventsSlice.reducer;
+export const { filterCountry, openEvent } = eventsSlice.actions;
