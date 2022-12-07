@@ -31,7 +31,7 @@ const Home =  () => {
         <div id="countryGrid">
         {countries.map((country) => (
           <div className='countryContainer' key={country.countryCode}>
-            <NavLink to={`./country`} className="countryLink" key={country.countryCode} id={country.countryCode}>
+            <NavLink to={`./country/${country.countryCode}`} className="countryLink" key={country.countryCode} id={country.countryCode}>
                <h3 className="countryTitle">{country.countryName}</h3>
             </NavLink>
           </div>

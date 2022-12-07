@@ -4,7 +4,7 @@ const Country = () => {
     return (
       <>
         <h1>The country page is working</h1>
-        <NavLink to='./event'>This button should conduce to the Event information</NavLink>
+        <NavLink to='./country/event'>This button should conduce to the Event information</NavLink>
       </>   
     )
 }
