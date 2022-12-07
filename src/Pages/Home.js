@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { VscFoldDown } from 'react-icons/vsc'
 import '../Styles/Home.css'
 
 const Home =  () => {
@@ -17,14 +18,20 @@ const Home =  () => {
           <div id="headerImage">
           </div>
           <div id="headerText">
-            <h1>WELLCOME TO MIEVENT</h1>
+            <h1>WELLCOME TO MiEVENT</h1>
+            <p id='headerDescription'>A place where you can find your dream event, anywhere</p>
+            <a id='discoverAction' href='#countryGrid'>
+              <VscFoldDown style={{color: 'white'}}/>
+            </a>
           </div>
         </header>
         <h2 id='gridTitle'>EVENTS BY COUNTRY</h2>
+        <h2 id='desktopGridTitle'>CHOOSE YOUR COUNTRY!</h2>
+        <hr />
         <div id="countryGrid">
         {countries.map((country) => (
           <div className='countryContainer' key={country.countryCode}>
-            <NavLink to={`./${country.countryCode}`} className="countryLink" key={country.countryCode} id={country.countryCode}>
+            <NavLink to={`./country`} className="countryLink" key={country.countryCode} id={country.countryCode}>
                <h3 className="countryTitle">{country.countryName}</h3>
             </NavLink>
           </div>
