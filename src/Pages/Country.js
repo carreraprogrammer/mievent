@@ -19,8 +19,14 @@ const Country = () => {
     return (
       <>
         <h1>The country page is working</h1>
-        <NavLink to='./country/event'>This button should conduce to the Event information</NavLink>
-        {events.map((event) => <h3 key={event.id}>{event.name}</h3>)}
+        <div id='eventsGrid'>
+        {events.map((event) => (
+          <div className='eventCard'>
+            <img src={event.cardImage} alt='event' style={{width: '300px'}}/>
+            <h3 key={event.id}>{event.name}</h3>
+          </div>
+          ))}
+        </div>
       </>   
     )
 }

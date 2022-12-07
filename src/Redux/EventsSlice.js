@@ -2,7 +2,7 @@ import  { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getEvents = createAsyncThunk(
  'Events/getEvents',
-  async (parameter = {countryCode: 'US', page: 2}) => {
+  async (parameter = {countryCode: 'US', page: 8}) => {
     const events = await fetch (`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${parameter.countryCode}&apikey=PGGUMOvxBDA4IqUYAvrgPbbdizZEGw9i&locale=*&page=${parameter.page}` )
     .then(response => response.json())
     .then(response => response._embedded.events)
