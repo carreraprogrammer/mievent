@@ -16,7 +16,7 @@
   background: red;
   flex-basis: 100%;
   height: 100%;
-  
+
 }
 
 .rightSide {
@@ -29,15 +29,60 @@
   margin-bottom: 3%;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 0px;
   text-align: center;
 }
 
 .eventCard {
   width: 100%;
-  height: 200px;
+  height: 120px;
   border: 1px solid black;
-  
+  display: flex;
+  align-items: center;
+}
+
+.eventStatus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10px;
+  width: 80px;
+  position: relative;
+  top: -8px;
+  left: 60%;
+  font-size: 10px;
+}
+
+.cardHr {
+  display: block;
+  margin: 4px;
+  width: 50px;
+  margin-left: 45px;
+}
+
+.eventCity {
+  font-weight: normal;
+}
+
+.eventGenre {
+  font-weight: normal;
+}
+
+.eventImageContainer {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid black;
+  height: 100%;
+  width: 100%;
+}
+
+.eventInformation {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  flex-basis: 50%;
 }
 
 #searchBar {

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import { getEvents } from '../Redux/EventsSlice'
 import { ImSearch } from 'react-icons/im'
+import { RxDotFilled } from 'react-icons/rx'
 import '../Styles/Country.css'
 
 const Country = () => {
@@ -36,9 +37,20 @@ const Country = () => {
         <div id='eventsGrid'>
         {events.map((event) => (
           <div className='eventCard' key={event.id}>
-            <img src={event.cardImage} alt='event' style={{width: '125px', height: '80px'}}/>
-            <h5 >{event.name}</h5>
-            <p>{event.genre}</p>
+            <div className="eventImageContainer">
+              <img src={event.cardImage} alt='event' style={{width: '110px', height: '80px'}}/>
+            </div>
+            <div className='eventInformation'>
+              <p className='eventStatus'>
+                <RxDotFilled style={{color: 'green', fontSize: '1rem'}} />  
+                {event.status}
+              </p>
+              <h5 >{event.name}</h5>
+              <hr className='cardHr' />
+              <h6 className='eventCity'><b>City: </b>{event.city}</h6>
+              <h6 className='eventGenre'><b>Genre: </b>{event.genre}</h6>
+
+            </div>
           </div>
           ))}
         </div>

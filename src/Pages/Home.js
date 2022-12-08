@@ -8,12 +8,12 @@ const Home =  () => {
   const dispatch = useDispatch();
 
   const countries = [
-      {countryCode: 'US', countryName: 'UNITED STATES', page: 0}, 
-      {countryCode: 'CA', countryName: 'CANADA', page: 0}, 
-      {countryCode: 'GB', countryName: 'UNITED KINGDOM', page: 0},  
+      {countryCode: 'US', countryName: 'UNITED STATES', page: 1}, 
+      {countryCode: 'CA', countryName: 'CANADA', page: 1}, 
+      {countryCode: 'GB', countryName: 'UNITED KINGDOM', page: 15},  
       {countryCode: 'ZA', countryName: 'SOUTH AFRICA', page: 0}, 
-      {countryCode: 'ES', countryName: 'SPAIN', page: 0}, 
-      {countryCode: 'AU', countryName: 'AUSTRALIA', page: 0}, 
+      {countryCode: 'ES', countryName: 'SPAIN', page: 1}, 
+      {countryCode: 'AU', countryName: 'AUSTRALIA', page: 1}, 
     ]
   
   const handleClick = (code, page, name) => {
