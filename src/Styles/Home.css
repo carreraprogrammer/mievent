@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 header {
@@ -46,10 +47,12 @@ header {
   font-size: 1rem;
   width: 100%;
   height: 2rem;
-  border: 1px solid red;
+  border: 1px solid black;
   padding-left: 5px;
   display: flex;
   align-items: center;
+  background: #f4f5f0;
+  color: red;
 }
 
 #desktopGridTitle {
@@ -100,20 +103,20 @@ hr {
   background-color: rgba(0, 0, 0, 0.719);
 }
 
-#US {
+.US {
   background: url(../Resources/Images/US.png);
   transition: all 1s ease-in-out;
   cursor: pointer;
   background-size: cover;
 }
 
-#US:hover {
+.US:hover {
   background: url(../Resources/Images/hoverUS.png);
   filter: grayscale(20%);
   background-size: cover;
 }
 
-#CA {
+.CA {
   background: url(../Resources/Images/CA.png);
   transition: all 1s ease-in-out;
   cursor: pointer;
@@ -121,14 +124,14 @@ hr {
   background-size: cover;
 }
 
-#CA:hover {
+.CA:hover {
   background: url(../Resources/Images/hoverCA.png);
   filter: grayscale(20%);
   background-position: center;
   background-size: cover;
 }
 
-#GB {
+.GB {
   background: url(../Resources/Images/GB.png);
   transition: all 1s ease-in-out;
   cursor: pointer;
@@ -136,14 +139,14 @@ hr {
   background-size: cover;
 }
 
-#GB:hover {
+.GB:hover {
   background: url(../Resources/Images/hoverGB.png);
   filter: grayscale(20%);
   background-position: center;
   background-size: cover;
 }
 
-#ZA {
+.ZA {
   background: url(../Resources/Images/ZA.png);
   transition: all 1s ease-in-out;
   cursor: pointer;
@@ -151,14 +154,14 @@ hr {
   background-size: cover;
 }
 
-#ZA:hover {
+.ZA:hover {
   background: url(../Resources/Images/hoverZA.png);
   filter: grayscale(20%);
   background-position: center;
   background-size: cover;
 }
 
-#ES {
+.ES {
   background: url(../Resources/Images/ES.png);
   transition: all 1s ease-in-out;
   cursor: pointer;
@@ -166,14 +169,14 @@ hr {
   background-size: cover;
 }
 
-#ES:hover {
+.ES:hover {
   background: url(../Resources/Images/hoverES.png);
   filter: grayscale(20%);
   background-position: center;
   background-size: cover; 
 }
 
-#AU {
+.AU {
   background: url(../Resources/Images/AU.png);
   transition: all 1s ease-in-out;
   cursor: pointer;
@@ -181,7 +184,7 @@ hr {
   background-size: cover;
 }
 
-#AU:hover {
+.AU:hover {
   background: url(../Resources/Images/hoverAU.png);
   filter: grayscale(30%);
   background-position: center;
@@ -213,6 +216,13 @@ hr {
     #headerDescription {
      font-size: 1.3rem;
     }
+
+    #gridTitle {
+      padding-left: 3%;
+      font-size: 1rem;
+      padding-bottom: 15px;
+      padding-top: 15px;
+    } 
 
     #countryGrid {
       width: 90%;

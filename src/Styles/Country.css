@@ -1,0 +1,157 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.countryHeader {
+  height: 30vh;
+  display: flex;
+  width: 100%;
+
+}
+
+.countryHeaderImage {
+  background: red;
+  flex-basis: 100%;
+  height: 100%;
+
+}
+
+.rightSide {
+  display: none;
+}
+
+#eventsGrid {
+  width: 90%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0px;
+  text-align: center;
+}
+
+.eventCard {
+  width: 100%;
+  height: 120px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.eventStatus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10px;
+  width: 80px;
+  position: relative;
+  top: -8px;
+  left: 60%;
+  font-size: 10px;
+}
+
+.cardHr {
+  display: block;
+  margin: 4px;
+  width: 50px;
+  margin-left: 45px;
+}
+
+.eventCity {
+  font-weight: normal;
+}
+
+.eventGenre {
+  font-weight: normal;
+}
+
+.eventImageContainer {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid black;
+  height: 100%;
+  width: 100%;
+}
+
+.eventInformation {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  flex-basis: 50%;
+}
+
+#searchBar {
+  width: 70%;
+  border-radius: 20px;
+  height: 30px;
+  margin-top: 3%;
+  border: 1px solid black;
+  display: flex;
+}
+
+#searchInput{
+  width: 90%;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  padding-bottom: 12px;
+}
+
+#searchBtn {
+  border:1px solid transparent;
+  background-color: transparent;
+  border-radius: 100%;
+  width: 28px;
+  height: 28px;
+}
+
+#searchBtn:hover {
+  background-color: rgba(0, 0, 0, 0.314);
+  cursor: pointer;
+}
+
+
+@media (min-width: 1250px) {
+    #eventsGrid {
+      width: 90%;
+      margin-top: 3%;
+      margin-bottom: 3%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 24px;
+      text-align: center;
+    }  
+    #searchBar {
+      width: 30%;
+    }
+    #searchInput {
+      width: 94%;
+    }
+    .countryHeader {
+        height: 60vh;
+        border: none;
+    }
+
+    .countryHeaderImage {
+      background: red;
+      flex-basis: 50%;
+      height: 100%;
+      border: none;
+    } 
+    
+    .rightSide {
+      display: flex;
+      flex-basis: 50%;
+      background-color: white;
+      justify-content: center;
+      align-items: center;
+    }    
+}

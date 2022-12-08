@@ -1,16 +1,29 @@
 import { NavLink } from 'react-router-dom';
-import { VscFoldDown } from 'react-icons/vsc'
+import { VscFoldDown } from 'react-icons/vsc';
+import { useDispatch, useSelector } from 'react-redux';
+import { filterCountry } from '../Redux/EventsSlice';
 import '../Styles/Home.css'
 
 const Home =  () => {
-    const countries = [
-      {countryCode: 'US', countryName: 'UNITED STATES'}, 
-      {countryCode: 'CA', countryName: 'CANADA'}, 
-      {countryCode: 'GB', countryName: 'UNITED KINGDOM'},  
-      {countryCode: 'ZA', countryName: 'SOUTH AFRICA'}, 
-      {countryCode: 'ES', countryName: 'SPAIN'}, 
-      {countryCode: 'AU', countryName: 'AUSTRALIA'}, 
+  const dispatch = useDispatch();
+
+  const countries = [
+      {countryCode: 'US', countryName: 'UNITED STATES', page: 1}, 
+      {countryCode: 'CA', countryName: 'CANADA', page: 1}, 
+      {countryCode: 'GB', countryName: 'UNITED KINGDOM', page: 15},  
+      {countryCode: 'ZA', countryName: 'SOUTH AFRICA', page: 0}, 
+      {countryCode: 'ES', countryName: 'SPAIN', page: 1}, 
+      {countryCode: 'AU', countryName: 'AUSTRALIA', page: 1}, 
     ]
+  
+  const handleClick = (code, page, name) => {
+    const parameters = {
+      countryCode: code,
+      page: page,
+      countryName: name,
+    }
+     dispatch(filterCountry(parameters))
+  }
 
     return (
       <div id="homeContainer">
@@ -31,7 +44,11 @@ const Home =  () => {
         <div id="countryGrid">
         {countries.map((country) => (
           <div className='countryContainer' key={country.countryCode}>
-            <NavLink to={`./country`} className="countryLink" key={country.countryCode} id={country.countryCode}>
+            <NavLink 
+              to={`./country/${country.countryCode}`} 
+              key={country.countryCode} 
+              onClick={() => handleClick(country.countryCode, country.page, country.countryName)}
+              className={`countryLink ${country.countryCode}`}>
                <h3 className="countryTitle">{country.countryName}</h3>
             </NavLink>
           </div>
