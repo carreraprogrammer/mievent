@@ -14,6 +14,13 @@ const Home =  () => {
       {countryCode: 'ZA', countryName: 'SOUTH AFRICA', page: 0}, 
       {countryCode: 'ES', countryName: 'SPAIN', page: 1}, 
       {countryCode: 'AU', countryName: 'AUSTRALIA', page: 1}, 
+      {countryCode: 'DE', countryName: 'GERMANY', page: 1}, 
+      {countryCode: 'NL', countryName: 'NETHERLANDS', page: 1},
+      {countryCode: 'NO', countryName: 'NORWAY', page: 1},
+      {countryCode: 'IT', countryName: 'ITALY', page: 1},
+      {countryCode: 'NZ', countryName: 'NEW ZELAND', page: 1},
+      {countryCode: 'PL', countryName: 'POLAND', page: 1},
+
     ]
   
   const handleClick = (code, page, name) => {

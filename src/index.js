@@ -36,4 +36,4 @@ const eventsApi = events.map((event) => {
 }
 
 
-console.log(eventsArray('US', 0))
+console.log(eventsArray('JP', 0))

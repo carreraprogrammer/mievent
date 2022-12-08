@@ -191,6 +191,96 @@ hr {
   background-size: cover;
 }
 
+.DE {
+  background: url(../Resources/Images/DE.png);
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+}
+
+.DE:hover {
+  background: url(../Resources/Images/hoverDE.png);
+  filter: grayscale(30%);
+  background-position: center;
+  background-size: cover;
+}
+
+.NL {
+  background: url(../Resources/Images/NL.png);
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+}
+
+.NL:hover {
+  background: url(../Resources/Images/hoverNL.png);
+  filter: grayscale(30%);
+  background-position: center;
+  background-size: cover;
+}
+
+.NO {
+  background: url(../Resources/Images/NO.png);
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+}
+
+.NO:hover {
+  background: url(../Resources/Images/hoverNO.png);
+  filter: grayscale(30%);
+  background-position: center;
+  background-size: cover;
+}
+
+.IT {
+  background: url(../Resources/Images/IT.png);
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+}
+
+.IT:hover {
+  background: url(../Resources/Images/hoverIT.png);
+  filter: grayscale(30%);
+  background-position: center;
+  background-size: cover;
+}
+
+.NZ {
+  background: url(../Resources/Images/NZ.png);
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+}
+
+.NZ:hover {
+  background: url(../Resources/Images/hoverNZ.png);
+  filter: grayscale(30%);
+  background-position: center;
+  background-size: cover;
+}
+
+.PL {
+  background: url(../Resources/Images/PL.png);
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+}
+
+.PL:hover {
+  background: url(../Resources/Images/hoverPL.png);
+  filter: grayscale(30%);
+  background-position: center;
+  background-size: cover;
+}
+
 /* DESKTOP */
 
 @media (min-width: 768px) {
