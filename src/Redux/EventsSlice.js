@@ -3,7 +3,7 @@ import  { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const getEvents = createAsyncThunk(
  'Events/getEvents',
   async (parameter) => {
-    const events = await fetch (`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${parameter.countryCode}&apikey=PGGUMOvxBDA4IqUYAvrgPbbdizZEGw9i&locale=*&page=${parameter.page}` )
+    const events = await fetch (`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${parameter.countryCode}&apikey=uE2X0AQk9MkPAgeiAz7SljZM9hEG6X2B&locale=*&page=${parameter.page}` )
     .then(response => response.json())
     .then(response => response._embedded.events)
   const eventsApi = events.map((event) => {
@@ -39,7 +39,6 @@ const eventsSlice = createSlice(
       filterCountry(state, {payload}) {
         return state = {...state, parameters: payload}
       },
-      cleanState(state) {return state = initialState},
 
     },
     extraReducers: (Builder) => {
