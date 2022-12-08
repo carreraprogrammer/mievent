@@ -16,10 +16,11 @@ const Home =  () => {
       {countryCode: 'AU', countryName: 'AUSTRALIA', page: 0}, 
     ]
   
-  const handleClick = (code, page) => {
+  const handleClick = (code, page, name) => {
     const parameters = {
       countryCode: code,
-      page: page
+      page: page,
+      countryName: name,
     }
      dispatch(filterCountry(parameters))
   }
@@ -45,9 +46,9 @@ const Home =  () => {
           <div className='countryContainer' key={country.countryCode}>
             <NavLink 
               to={`./country/${country.countryCode}`} 
-              className="countryLink" key={country.countryCode} 
-              onClick={async () => await handleClick(country.countryCode, country.page)}
-              id={country.countryCode}>
+              key={country.countryCode} 
+              onClick={() => handleClick(country.countryCode, country.page, country.countryName)}
+              className={`countryLink ${country.countryCode}`}>
                <h3 className="countryTitle">{country.countryName}</h3>
             </NavLink>
           </div>

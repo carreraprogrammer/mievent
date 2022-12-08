@@ -22,6 +22,13 @@ const Country = () => {
 
     return (
       <>
+        <div className="countryHeader">
+          <div className="rightSide">
+            <h1> EVENTS IN {parameters.countryName}</h1>
+          </div>
+          <div className={`countryHeaderImage ${parameters.countryCode}`}></div>
+        </div>
+        <h2 id='gridTitle'>{parameters.countryName}</h2>
         <form id='searchBar'>
           <input type='text' id='searchInput' />
           <button type='submit' id='searchBtn'><ImSearch style={{color: 'red', fontSize: '1rem'}}/></button>
@@ -29,7 +36,7 @@ const Country = () => {
         <div id='eventsGrid'>
         {events.map((event) => (
           <div className='eventCard' key={event.id}>
-            <img src={event.cardImage} alt='event' style={{width: '125px', height: '60px'}}/>
+            <img src={event.cardImage} alt='event' style={{width: '125px', height: '80px'}}/>
             <h5 >{event.name}</h5>
             <p>{event.genre}</p>
           </div>

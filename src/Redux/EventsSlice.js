@@ -39,7 +39,7 @@ const eventsSlice = createSlice(
       filterCountry(state, {payload}) {
         return state = {...state, parameters: payload}
       },
-      cleatState(state) {return state = initialState},
+      cleanState(state) {return state = initialState},
 
     },
     extraReducers: (Builder) => {

@@ -15,9 +15,12 @@ nav {
   display: flex;
   align-items: center;
   padding-left: 5%;
-  border-bottom: 2px solid red;
+  -webkit-box-shadow: 2px -1px 29px -4px rgba(31,31,31,1);
+  -moz-box-shadow: 2px -1px 29px -4px rgba(31,31,31,1);
+  box-shadow: 2px -1px 29px -4px rgba(31,31,31,1);
   justify-content: space-between;
   width: 100%;
+  z-index: 1;
 }
 
 #logo {
