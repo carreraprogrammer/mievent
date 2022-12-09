@@ -42,10 +42,11 @@ const Country = () => {
                 <RxDotFilled style={{color: 'green', fontSize: '1rem'}} />  
                 {event.status}
               </p>
-              <h5 >{event.name}</h5>
+              <h5 className='eventName'>{event.name}</h5>
               <hr className='cardHr' />
               <h6 className='eventCity'><b>City: </b>{event.city}</h6>
               <h6 className='eventGenre'><b>Genre: </b>{event.genre}</h6>
+              <h6 className='eventDate'><b>Date: </b>{event.startDate}</h6>
             </div>
           </div>
           ))}

@@ -53,19 +53,23 @@
   font-size: 10px;
 }
 
+.eventName {
+  width: 100%;
+  height: 20%;
+  overflow-y: hidden;
+}
+
 .cardHr {
   display: block;
-  margin: 4px;
-  width: 50px;
-  margin-left: 45px;
+  width: 30%;
+  margin-left: 35%;
 }
 
-.eventCity {
-  font-weight: normal;
-}
-
+.eventCity,
+.eventDate,
 .eventGenre {
   font-weight: normal;
+  line-height: 14px;
 }
 
 .eventImageContainer {
@@ -194,6 +198,10 @@
       height: 100%;
       border: none;
     } 
+
+    .eventCard {
+      height: 150px;
+    }
     
     .rightSide {
       display: flex;
