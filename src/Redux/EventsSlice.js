@@ -40,6 +40,10 @@ const eventsSlice = createSlice(
       filterCountry(state, {payload}) {
         return state = {...state, parameters: payload}
       },
+      searchByName(state, {payload}) {
+        const newArray = state.data.filter((event) => event.name === payload)
+        return state = {...state, data: newArray}
+      }
     },
     extraReducers: (Builder) => {
         Builder.addCase(getEvents.fulfilled, (state, action) => {
@@ -50,4 +54,4 @@ const eventsSlice = createSlice(
 )
 
 export default eventsSlice.reducer;
-export const { filterCountry  } = eventsSlice.actions;
+export const { filterCountry, searchByName  } = eventsSlice.actions;

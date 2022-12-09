@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import { getEvents } from '../Redux/EventsSlice'
+import { getEvents, searchByName } from '../Redux/EventsSlice'
 import { ImSearch } from 'react-icons/im'
 import { RxDotFilled } from 'react-icons/rx'
 import '../Styles/Country.css'
@@ -10,13 +10,26 @@ const Country = () => {
   const dispatch = useDispatch();
  
   
-  const events = useSelector((state) => state.Events.data)
+  const apiEvents = useSelector((state) => state.Events.data)
   const apiParameters = useSelector((state) => state.Events.parameters)
   const [parameters, setParameters] = useState(apiParameters)
+  const [events, setEvents] = useState(apiEvents)
 
   useEffect(() => {
     dispatch(getEvents(parameters));
   }, [dispatch, parameters]);
+
+  const searchEvent = () => {
+    const inputValue =  document.getElementById('searchInput').value.toLowerCase();
+    let newEvents;
+    if(inputValue.length > 0) {
+      newEvents =  events.filter((event) => event.name.toLowerCase().indexOf(inputValue) > -1)
+    }else {
+      newEvents = apiEvents
+    }
+    setEvents(newEvents);
+  }
+
 
     return (
       <>
@@ -28,8 +41,8 @@ const Country = () => {
         </div>
         <h2 id='gridTitle'>{parameters.countryName}</h2>
         <form id='searchBar'>
-          <input type='text' id='searchInput' />
-          <button type='submit' id='searchBtn'><ImSearch style={{color: 'red', fontSize: '1rem'}}/></button>
+          <input type='text' id='searchInput' onInput ={() => searchEvent()}/>
+          <button type='submit' id='searchBtn' onClick ={(e) => e.preventDefault()}><ImSearch /></button>
         </form>
         <div id='eventsGrid'>
         {events.map((event) => (
