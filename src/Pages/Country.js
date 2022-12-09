@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { getEvents, nextPage } from '../Redux/EventsSlice'
 import { ImSearch } from 'react-icons/im'
 import { RxDotFilled } from 'react-icons/rx'
+import { GrChapterNext } from 'react-icons/gr'
 import '../Styles/Country.css'
 
 const Country = () => {
@@ -50,15 +51,20 @@ const Country = () => {
           </div>
           ))}
         </div>
-        <button id='nextBtn' onClick={()=> {
-           setParameters({...parameters, page: parameters.page + 1})
-           console.log(parameters)
-          }}>NEXT PAGE</button>
-        <button id='prevBtn' onClick={()=> {
-           if(parameters.page > 0){
-           setParameters({...parameters, page: parameters.page - 1})
-           console.log(parameters)}
-        }}>PREV PAGE</button>
+        <div className='controlPanel'>
+          <button id='nextBtn' 
+          onClick={()=> {
+            if(parameters.page > 0){
+            setParameters({...parameters, page: parameters.page - 1})
+            console.log(parameters)}}}
+          ><div id="prev"></div></button>
+          <p>page {parameters.page}</p>
+          <button id='prevBtn'          
+          onClick={()=> {
+             setParameters({...parameters, page: parameters.page + 1})
+             console.log(parameters)
+            }}><div id="next"></div></button>
+        </div>
       </>   
     )
 }

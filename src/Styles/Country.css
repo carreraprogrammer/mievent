@@ -118,10 +118,58 @@
   cursor: pointer;
 }
 
+.controlPanel {
+  display: flex;
+  width: 40%;
+  margin-bottom: 3%;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+#nextBtn {
+  border: none; 
+  cursor: pointer;
+  padding: 10px;
+  background: transparent;
+}
+
+#next {
+  border-top: 4px solid black;
+  border-right: 4px solid black;
+  height: 15px;
+  width: 15px;
+  transform: rotate(45deg)
+}
+
+#next:hover {
+  border-color: red
+}
+
+#prevBtn {
+  border: none; 
+  cursor: pointer;
+  padding: 10px;
+  background: transparent;
+}
+
+#prev {
+  border-top: 4px solid black;
+  border-right: 4px solid black;
+  height: 15px;
+  width: 15px;
+  transform: rotate(225deg)
+}
+
+#prev:hover {
+  border-color: red;
+}
+
+
 
 @media (min-width: 1250px) {
     #eventsGrid {
-      width: 90%;
+      width: 95%;
       margin-top: 3%;
       margin-bottom: 3%;
       display: grid;
