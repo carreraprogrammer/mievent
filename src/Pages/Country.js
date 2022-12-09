@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import { getEvents, searchByName } from '../Redux/EventsSlice'
+import { getEvents } from '../Redux/EventsSlice'
 import { ImSearch } from 'react-icons/im'
 import { RxDotFilled } from 'react-icons/rx'
 import '../Styles/Country.css'
@@ -24,7 +24,7 @@ const Country = () => {
     let newEvents;
     if(inputValue.length > 0) {
       newEvents =  events.filter((event) => event.name.toLowerCase().indexOf(inputValue) > -1)
-    }else {
+    } else {
       newEvents = apiEvents
     }
     setEvents(newEvents);
