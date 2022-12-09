@@ -8,18 +8,18 @@ const Home =  () => {
   const dispatch = useDispatch();
 
   const countries = [
-      {countryCode: 'US', countryName: 'UNITED STATES', page: 1}, 
-      {countryCode: 'CA', countryName: 'CANADA', page: 1}, 
-      {countryCode: 'GB', countryName: 'UNITED KINGDOM', page: 15},  
+      {countryCode: 'US', countryName: 'UNITED STATES', page: 0}, 
+      {countryCode: 'CA', countryName: 'CANADA', page: 0}, 
+      {countryCode: 'GB', countryName: 'UNITED KINGDOM', page: 0},  
       {countryCode: 'ZA', countryName: 'SOUTH AFRICA', page: 0}, 
-      {countryCode: 'ES', countryName: 'SPAIN', page: 1}, 
-      {countryCode: 'AU', countryName: 'AUSTRALIA', page: 1}, 
-      {countryCode: 'DE', countryName: 'GERMANY', page: 1}, 
-      {countryCode: 'NL', countryName: 'NETHERLANDS', page: 1},
-      {countryCode: 'NO', countryName: 'NORWAY', page: 1},
-      {countryCode: 'IT', countryName: 'ITALY', page: 1},
-      {countryCode: 'NZ', countryName: 'NEW ZELAND', page: 1},
-      {countryCode: 'PL', countryName: 'POLAND', page: 1},
+      {countryCode: 'ES', countryName: 'SPAIN', page: 0}, 
+      {countryCode: 'AU', countryName: 'AUSTRALIA', page: 0}, 
+      {countryCode: 'DE', countryName: 'GERMANY', page: 0}, 
+      {countryCode: 'NL', countryName: 'NETHERLANDS', page: 0},
+      {countryCode: 'NO', countryName: 'NORWAY', page: 0},
+      {countryCode: 'IT', countryName: 'ITALY', page: 0},
+      {countryCode: 'NZ', countryName: 'NEW ZELAND', page: 0},
+      {countryCode: 'PL', countryName: 'POLAND', page: 0},
 
     ]
   

@@ -2,8 +2,9 @@ import  { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getEvents = createAsyncThunk(
  'Events/getEvents',
-  async (parameter) => {
-    const events = await fetch (`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${parameter.countryCode}&apikey=uE2X0AQk9MkPAgeiAz7SljZM9hEG6X2B&locale=*&page=${parameter.page}` )
+  async (parameters) => {
+    const events = await fetch (`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${parameters.countryCode}&apikey=AHTuuCE2MyGGUd2PwzHVkwV3ok9tWVKw&locale=*&page=${parameters.page}`
+    )
     .then(response => response.json())
     .then(response => response._embedded.events)
   const eventsApi = events.map((event) => {
@@ -29,7 +30,7 @@ export const getEvents = createAsyncThunk(
   }
 )
 
-const initialState = {parameters: {}, data: [] }
+const initialState = {parameters: {countryCode: '', page: 0, countryName: ''}, data: [] }
 
 const eventsSlice = createSlice(
   {
@@ -39,6 +40,10 @@ const eventsSlice = createSlice(
       filterCountry(state, {payload}) {
         return state = {...state, parameters: payload}
       },
+      nextPage(state) {
+        const newPage = state.parameters.page + 1;
+        return {...state, parameters: {...state.parameters, page: newPage}}
+      }
 
     },
     extraReducers: (Builder) => {
@@ -50,4 +55,4 @@ const eventsSlice = createSlice(
 )
 
 export default eventsSlice.reducer;
-export const { filterCountry, cleanState } = eventsSlice.actions;
+export const { filterCountry, nextPage } = eventsSlice.actions;

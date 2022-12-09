@@ -10,7 +10,7 @@ root.render(
   </BrowserRouter>
 )
 
-const eventsArray = async (countryCode, page) => {
+/* const eventsArray = async (countryCode, page) => {
   const events = await fetch (`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${countryCode}&apikey=uE2X0AQk9MkPAgeiAz7SljZM9hEG6X2B&locale=*&page=${page}`)
   .then(response => response.json())
   .then(response => response._embedded.events)
@@ -36,4 +36,4 @@ const eventsApi = events.map((event) => {
 }
 
 
-console.log(eventsArray('JP', 0))
+console.log(eventsArray('US', 0))*/

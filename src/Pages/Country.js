@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useEffect } from 'react';
-import { getEvents } from '../Redux/EventsSlice'
+import React, { useEffect, useState } from 'react';
+import { getEvents, nextPage } from '../Redux/EventsSlice'
 import { ImSearch } from 'react-icons/im'
 import { RxDotFilled } from 'react-icons/rx'
 import '../Styles/Country.css'
@@ -11,14 +11,12 @@ const Country = () => {
  
   
   const events = useSelector((state) => state.Events.data)
-  const parameters = useSelector((state) => state.Events.parameters)
-
-  console.log(parameters)
+  const apiParameters = useSelector((state) => state.Events.parameters)
+  const [parameters, setParameters] = useState(apiParameters)
 
   useEffect(() => {
-    if (events.length >= 0) {
-      dispatch(getEvents(parameters));}
-  });
+      dispatch(getEvents(parameters));
+  }, [parameters]);
 
     return (
       <>
@@ -48,11 +46,19 @@ const Country = () => {
               <hr className='cardHr' />
               <h6 className='eventCity'><b>City: </b>{event.city}</h6>
               <h6 className='eventGenre'><b>Genre: </b>{event.genre}</h6>
-
             </div>
           </div>
           ))}
         </div>
+        <button id='nextBtn' onClick={()=> {
+           setParameters({...parameters, page: parameters.page + 1})
+           console.log(parameters)
+          }}>NEXT PAGE</button>
+        <button id='prevBtn' onClick={()=> {
+           if(parameters.page > 0){
+           setParameters({...parameters, page: parameters.page - 1})
+           console.log(parameters)}
+        }}>PREV PAGE</button>
       </>   
     )
 }
