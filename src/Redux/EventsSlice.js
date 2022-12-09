@@ -40,11 +40,6 @@ const eventsSlice = createSlice(
       filterCountry(state, {payload}) {
         return state = {...state, parameters: payload}
       },
-      nextPage(state) {
-        const newPage = state.parameters.page + 1;
-        return {...state, parameters: {...state.parameters, page: newPage}}
-      }
-
     },
     extraReducers: (Builder) => {
         Builder.addCase(getEvents.fulfilled, (state, action) => {
@@ -55,4 +50,4 @@ const eventsSlice = createSlice(
 )
 
 export default eventsSlice.reducer;
-export const { filterCountry, nextPage } = eventsSlice.actions;
+export const { filterCountry  } = eventsSlice.actions;

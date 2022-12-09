@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import { getEvents, nextPage } from '../Redux/EventsSlice'
+import { getEvents } from '../Redux/EventsSlice'
 import { ImSearch } from 'react-icons/im'
 import { RxDotFilled } from 'react-icons/rx'
-import { GrChapterNext } from 'react-icons/gr'
 import '../Styles/Country.css'
 
 const Country = () => {
