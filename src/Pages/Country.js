@@ -15,8 +15,8 @@ const Country = () => {
   const [parameters, setParameters] = useState(apiParameters)
 
   useEffect(() => {
-      dispatch(getEvents(parameters));
-  }, [parameters]);
+    dispatch(getEvents(parameters));
+  }, [dispatch, parameters]);
 
     return (
       <>
