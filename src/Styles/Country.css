@@ -39,6 +39,12 @@
   border: 1px solid black;
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.eventCard:hover {
+  border: 2px solid red;
+  background-color: #f4f5f0;
 }
 
 .eventStatus {
@@ -55,7 +61,7 @@
 
 .eventName {
   width: 100%;
-  height: 50px;
+  max-height: 50px;
   overflow-y: hidden;
 }
 
