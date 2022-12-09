@@ -4,6 +4,10 @@
   align-items: center;
   justify-content: center;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 
 .countryHeader {
   height: 30vh;

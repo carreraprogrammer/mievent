@@ -1,6 +1,11 @@
+import { useDispatch, useSelector } from 'react-redux';
+
 const EventInfo = () => {
+
+  const apiId = useSelector((state) => state.Events.eventId)
+
   return(
-    <h1>This is the Event information</h1>
+    <h1>{apiId}</h1>
   )
 }
 
