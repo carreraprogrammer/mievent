@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import { getEvents, eventId } from '../Redux/EventsSlice'
+import { getEvents, eventId, setEvents } from '../Redux/EventsSlice'
 import { ImSearch } from 'react-icons/im'
 import { RxDotFilled } from 'react-icons/rx'
 import '../Styles/Country.css'
@@ -11,14 +11,14 @@ const Country = () => {
   const dispatch = useDispatch();
  
   
-  const apiEvents = useSelector((state) => state.Events.data)
+  let events = useSelector((state) => state.Events.data)
   const apiParameters = useSelector((state) => state.Events.parameters)
   const [parameters, setParameters] = useState(apiParameters)
-  const [events, setEvents] = useState(apiEvents)
 
   useEffect(() => {
     dispatch(getEvents(parameters));
-  }, [dispatch, parameters]);
+  }, [dispatch, events, parameters]);
+  
 
   const searchEvent = () => {
     const inputValue =  document.getElementById('searchInput').value.toLowerCase();
@@ -26,7 +26,7 @@ const Country = () => {
     if(inputValue.length > 0) {
       newEvents =  events.filter((event) => event.name.toLowerCase().indexOf(inputValue) > -1)
     }else {
-      newEvents = apiEvents
+      newEvents = events
     }
     setEvents(newEvents);
   }

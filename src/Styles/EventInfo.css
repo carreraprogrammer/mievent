@@ -1,0 +1,135 @@
+#eventName {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+  text-align: center;
+}
+
+#basicInfo {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+
+#details {
+  width: 100%;
+  height: 100%;
+}
+
+#prices, #dates, #genres, #city {
+  width: 100%;
+  display: flex;
+}
+
+#city {
+  width: 100%;
+  border: 1px solid black;
+  font-size: 1.2rem;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#purchaseContainer > a {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#purchaseContainer > a:hover {
+  background-color: green;
+  color: white;
+  border-color: white;
+}
+
+#purchaseContainer > a:active {
+  background-color: green;
+  color: white;
+  border-color: white;
+}
+
+#minPrice,
+#maxPrice,
+#date,
+#time,
+#genre,
+#subGenre {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  flex-basis: 50%;
+  padding: 10px;
+}
+
+#eventImageContainer {
+  height: 220px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+#eventDescription {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#seatMapContainer {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  margin-bottom: 5%;
+}
+
+#seatMap {
+  width: 90%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+    #eventName {
+      margin: 3%;
+    }
+    #basicInfo {
+      width: 60%;
+      flex-direction: row;
+      height: 50%;
+    }
+
+    #eventDescription {
+      width: 60%;
+    }
+
+    #eventImageContainer {
+      height: 100%;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      padding: 10px;
+      height: 100%;
+    }
+
+   #seatMapContainer {
+    width: 60%;
+    margin-bottom: 3%;
+   }
+
+   #purchaseContainer {
+    height: 27%;
+   }
+}
