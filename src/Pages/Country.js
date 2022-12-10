@@ -1,6 +1,7 @@
+import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import { getEvents } from '../Redux/EventsSlice'
+import { getEvents, eventId, setEvents } from '../Redux/EventsSlice'
 import { ImSearch } from 'react-icons/im'
 import { RxDotFilled } from 'react-icons/rx'
 import '../Styles/Country.css'
@@ -10,22 +11,22 @@ const Country = () => {
   const dispatch = useDispatch();
  
   
-  const apiEvents = useSelector((state) => state.Events.data)
+  let events = useSelector((state) => state.Events.data)
   const apiParameters = useSelector((state) => state.Events.parameters)
   const [parameters, setParameters] = useState(apiParameters)
-  const [events, setEvents] = useState(apiEvents)
 
   useEffect(() => {
     dispatch(getEvents(parameters));
-  }, [dispatch, parameters]);
+  }, [dispatch, events, parameters]);
+  
 
   const searchEvent = () => {
     const inputValue =  document.getElementById('searchInput').value.toLowerCase();
     let newEvents;
     if(inputValue.length > 0) {
       newEvents =  events.filter((event) => event.name.toLowerCase().indexOf(inputValue) > -1)
-    } else {
-      newEvents = apiEvents
+    }else {
+      newEvents = events
     }
     setEvents(newEvents);
   }
@@ -46,7 +47,7 @@ const Country = () => {
         </form>
         <div id='eventsGrid'>
         {events.map((event) => (
-          <div className='eventCard' key={event.id}>
+          <NavLink className='eventCard' onClick= {() => dispatch(eventId(event.id))} key={event.id} to={`./${event.id}`}>
             <div className="eventImageContainer">
               <img src={event.cardImage} alt='event' style={{width: '110px', height: '80px'}}/>
             </div>
@@ -61,7 +62,7 @@ const Country = () => {
               <h6 className='eventGenre'><b>Genre: </b>{event.genre}</h6>
               <h6 className='eventDate'><b>Date: </b>{event.startDate}</h6>
             </div>
-          </div>
+          </NavLink>
           ))}
         </div>
         <div className='controlPanel'>

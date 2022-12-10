@@ -23,6 +23,7 @@ export const getEvents = createAsyncThunk(
         genre: event.classifications[0].genre.name,
         subGenre: event.classifications[0].subgenre,
         city: event._embedded.venues[0].city.name,
+        seatMap: () => event.hasOwnProperty('seatmap') && event.seatmap.staticUrl.length > 0? event.seatmap.staticUrl : '',
     }
     return eventInfo
   })
@@ -30,7 +31,7 @@ export const getEvents = createAsyncThunk(
   }
 )
 
-const initialState = {parameters: {countryCode: '', page: 0, countryName: ''}, data: [] }
+const initialState = {parameters: {countryCode: '', page: 0, countryName: ''}, data: [], eventId: null, }
 
 const eventsSlice = createSlice(
   {
@@ -40,7 +41,12 @@ const eventsSlice = createSlice(
       filterCountry(state, {payload}) {
         return state = {...state, parameters: payload}
       },
-      
+      eventId(state, {payload}) {
+        return state = {...state, eventId: payload, eventInfo: state.data.filter((event) => event.id.indexOf(payload) > -1 )}
+      },
+      setEvents(state, {payload}) {
+        return state = {...state, data: payload}
+      }
     },
     extraReducers: (Builder) => {
         Builder.addCase(getEvents.fulfilled, (state, action) => {
@@ -51,4 +57,4 @@ const eventsSlice = createSlice(
 )
 
 export default eventsSlice.reducer;
-export const { filterCountry, searchByName  } = eventsSlice.actions;
+export const { filterCountry, eventId, setEvents } = eventsSlice.actions;

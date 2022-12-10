@@ -14,7 +14,7 @@ const Home =  () => {
       {countryCode: 'ZA', countryName: 'SOUTH AFRICA', page: 0}, 
       {countryCode: 'ES', countryName: 'SPAIN', page: 0}, 
       {countryCode: 'AU', countryName: 'AUSTRALIA', page: 0}, 
-      {countryCode: 'DE', countryName: 'GERMANY', page: 0}, 
+      {countryCode: 'DE', countryName: 'GERMANY', page: 14}, 
       {countryCode: 'NL', countryName: 'NETHERLANDS', page: 0},
       {countryCode: 'NO', countryName: 'NORWAY', page: 0},
       {countryCode: 'IT', countryName: 'ITALY', page: 0},
