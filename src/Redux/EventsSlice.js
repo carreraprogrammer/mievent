@@ -23,7 +23,7 @@ export const getEvents = createAsyncThunk(
         genre: event.classifications[0].genre.name,
         subGenre: event.classifications[0].subgenre,
         city: event._embedded.venues[0].city.name,
-        seatMap: () => event.hasOwnProperty('seatmap')? event.seatmap.staticUrl : '',
+        seatMap: () => event.hasOwnProperty('seatmap') && event.seatmap.staticUrl.length > 0? event.seatmap.staticUrl : '',
     }
     return eventInfo
   })

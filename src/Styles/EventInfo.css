@@ -1,5 +1,5 @@
 #eventName {
-  margin-top: 5%;
+  margin-top: 15%;
   margin-bottom: 5%;
   width: 100%;
   text-align: center;
@@ -92,11 +92,18 @@
   justify-content: center;
   border: 1px solid black;
   margin-bottom: 5%;
+  padding: 24px;
 }
 
 #seatMap {
   width: 90%;
   height: auto;
+}
+
+#backArrow {
+  position: absolute;
+  top: 8%;
+  left: 5%;
 }
 
 @media (min-width: 768px) {
@@ -132,4 +139,10 @@
    #purchaseContainer {
     height: 27%;
    }
+
+   #backArrow {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+  }  
 }

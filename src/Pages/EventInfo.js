@@ -1,13 +1,11 @@
-import { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { FaStepBackward } from 'react-icons/fa'
 import '../Styles/EventInfo.css';
 
 const EventInfo = () => {
-  
-  const apiId = useSelector((state) => state.Events.eventId)
   const apiInfo = useSelector((state) => state.Events.eventInfo)
-  const prices = apiInfo[0].externalLinks
-  console.log(prices)
+  const parameters = useSelector((state) => state.Events.parameters)
 
   const handleDisplay = () => {
     if(apiInfo[0].seatMap().length > 0) {
@@ -19,6 +17,7 @@ const EventInfo = () => {
  
   return(
     <>
+      <NavLink to={`../country/${parameters.countryCode}`} id='backArrow'><FaStepBackward style={{fontSize: '20px', color: 'red'}}/> </NavLink>
       <h1 id='eventName'>{apiInfo[0].name}</h1>
       <div id='basicInfo'>
         <div id='eventImageContainer'>
