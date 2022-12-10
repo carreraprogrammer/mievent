@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import { getEvents, eventId, setEvents } from '../Redux/EventsSlice'
+import { getEvents, eventId, searchEvent } from '../Redux/EventsSlice'
 import { ImSearch } from 'react-icons/im'
 import { RxDotFilled } from 'react-icons/rx'
 import '../Styles/Country.css'
@@ -11,26 +11,15 @@ const Country = () => {
   const dispatch = useDispatch();
  
   
-  let events = useSelector((state) => state.Events.data)
+  const events = useSelector((state) => state.Events.data)
   const apiParameters = useSelector((state) => state.Events.parameters)
   const [parameters, setParameters] = useState(apiParameters)
+  const [events2, setEvents] = useState()
 
   useEffect(() => {
+
     dispatch(getEvents(parameters));
-  }, [dispatch, events, parameters]);
-  
-
-  const searchEvent = () => {
-    const inputValue =  document.getElementById('searchInput').value.toLowerCase();
-    let newEvents;
-    if(inputValue.length > 0) {
-      newEvents =  events.filter((event) => event.name.toLowerCase().indexOf(inputValue) > -1)
-    }else {
-      newEvents = events
-    }
-    setEvents(newEvents);
-  }
-
+  }, [dispatch, parameters]);
 
     return (
       <>
@@ -42,8 +31,14 @@ const Country = () => {
         </div>
         <h2 id='gridTitle'>{parameters.countryName}</h2>
         <form id='searchBar'>
-          <input type='text' id='searchInput' onInput ={() => searchEvent()}/>
-          <button type='submit' id='searchBtn' onClick ={(e) => e.preventDefault()}><ImSearch /></button>
+          <input type='text' id='searchInput' onInput ={(e) => {
+            if(e.target.value.length === 0) {
+              dispatch(getEvents(parameters))
+            }else {
+              dispatch(searchEvent(e.target.value.toLowerCase()))
+            }
+          }}/>
+          <button type='submit' id='searchBtn' onClick ={(e) => {e.preventDefault()}}><ImSearch /></button>
         </form>
         <div id='eventsGrid'>
         {events.map((event) => (

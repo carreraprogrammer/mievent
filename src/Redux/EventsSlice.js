@@ -3,7 +3,7 @@ import  { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const getEvents = createAsyncThunk(
  'Events/getEvents',
   async (parameters) => {
-    const events = await fetch (`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${parameters.countryCode}&apikey=AHTuuCE2MyGGUd2PwzHVkwV3ok9tWVKw&locale=*&page=${parameters.page}`
+    const events = await fetch (`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=${parameters.countryCode}&apikey=uE2X0AQk9MkPAgeiAz7SljZM9hEG6X2B&locale=*&page=${parameters.page}`
     )
     .then(response => response.json())
     .then(response => response._embedded.events)
@@ -45,8 +45,11 @@ const eventsSlice = createSlice(
         return  newState
       },
       eventId(state, {payload}) {
-
         const newState = {...state, eventId: payload, eventInfo: state.data.filter((event) => event.id.indexOf(payload) > -1 )}
+        return newState
+      },
+      searchEvent(state, {payload}) {
+        const newState = {...state, data: state.data.filter((event) => event.name.toLowerCase().indexOf(payload) > -1)}
         return newState
       },
       setEvents(state, {payload}) {
@@ -64,4 +67,4 @@ const eventsSlice = createSlice(
 )
 
 export default eventsSlice.reducer;
-export const { filterCountry, eventId, setEvents } = eventsSlice.actions;
+export const { filterCountry, eventId, setEvents, searchEvent } = eventsSlice.actions;
