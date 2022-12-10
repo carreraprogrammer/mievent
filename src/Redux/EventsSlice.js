@@ -9,22 +9,24 @@ export const getEvents = createAsyncThunk(
     .then(response => response._embedded.events)
   const eventsApi = events.map((event) => {
       const eventInfo = {
-        name: event.name,
-        cardImage: event.images[1].url,
-        image: event.images[3].url,
-        info: event.info,
-        id: event.id,
-        startDate: event.dates.start.localDate,
-        startTime: event.dates.start.localTime,
-        status: event.dates.status.code,
-        prices: event.priceRanges,
-        externalLinks: event.externalLinks,
-        purchase: event.url,
-        genre: event.classifications[0].genre.name,
-        subGenre: event.classifications[0].subgenre,
-        city: event._embedded.venues[0].city.name,
-        seatMap: () => event.hasOwnProperty('seatmap') && event.seatmap.staticUrl.length > 0? event.seatmap.staticUrl : '',
-    }
+        name: event.name ?? '',
+        cardImage: event.images[1].url ?? '',
+        image: event.images[3].url ?? '',
+        info: event.info ?? '',
+        id: event.id ?? '',
+        startDate: event.dates.start.localDate ?? '',
+        startTime: event.dates.start.localTime ?? '',
+        status: event.dates.status.code ?? '',
+        prices: event.priceRanges ?? '',
+        externalLinks: event.externalLinks ?? '',
+        purchase: event.url ?? '',
+        genre: event.classifications[0].genre.name ?? '',
+        subGenre: event.classifications[0].subgenre ?? '',
+        city: event._embedded.venues[0].city.name ?? '',
+    } ?? {name: 'Event not available'}
+    const seatMap = event.hasOwnProperty('seatmap') ? event.seatmap.staticUrl : 'https://us.123rf.com/450wm/infadel/infadel1712/infadel171200119/infadel171200119.jpg?ver=6'
+    eventInfo.seat = seatMap
+
     return eventInfo
   })
     return eventsApi
@@ -39,18 +41,23 @@ const eventsSlice = createSlice(
     initialState,
     reducers: {
       filterCountry(state, {payload}) {
-        return state = {...state, parameters: payload}
+        const newState = {...state, parameters: payload}
+        return  newState
       },
       eventId(state, {payload}) {
-        return state = {...state, eventId: payload, eventInfo: state.data.filter((event) => event.id.indexOf(payload) > -1 )}
+
+        const newState = {...state, eventId: payload, eventInfo: state.data.filter((event) => event.id.indexOf(payload) > -1 )}
+        return newState
       },
       setEvents(state, {payload}) {
-        return state = {...state, data: payload}
+        const newState = {...state, data: payload}
+        return newState
       }
     },
     extraReducers: (Builder) => {
         Builder.addCase(getEvents.fulfilled, (state, action) => {
-            state.data = action.payload;
+            const newState = {...state, data: action.payload}
+            return newState
         })
      }
   }
