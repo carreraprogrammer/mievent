@@ -14,7 +14,6 @@ const Country = () => {
   const events = useSelector((state) => state.Events.data)
   const apiParameters = useSelector((state) => state.Events.parameters)
   const [parameters, setParameters] = useState(apiParameters)
-  const [events2, setEvents] = useState()
 
   useEffect(() => {
 
@@ -31,7 +30,7 @@ const Country = () => {
         </div>
         <h2 id='gridTitle'>{parameters.countryName}</h2>
         <form id='searchBar'>
-          <input type='text' id='searchInput' onInput ={(e) => {
+          <input type='text' id='searchInput' placeholder='Search Event By Name' onInput ={(e) => {
             if(e.target.value.length === 0) {
               dispatch(getEvents(parameters))
             }else {
