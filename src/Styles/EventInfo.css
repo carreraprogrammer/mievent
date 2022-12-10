@@ -19,8 +19,12 @@
   height: 100%;
 }
 
-#prices, #dates, #genres, #city {
+#prices,
+#dates,
+#genres, 
+#city {
   width: 100%;
+  height: auto;
   display: flex;
 }
 
@@ -67,9 +71,11 @@
 #subGenre {
   border: 1px solid black;
   width: 100%;
-  height: 100%;
+  height: auto;
   flex-basis: 50%;
   padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
 #eventImageContainer {
@@ -104,7 +110,6 @@
   max-height: 90%;
   max-width: 90%;
   margin-left: 5%;
-  border: 1px solid red;
 }
 
 #backArrow {
