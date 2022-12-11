@@ -105,7 +105,7 @@ hr {
 
 .US {
   background: url(../Resources/Images/US.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-size: cover;
 }
@@ -118,7 +118,7 @@ hr {
 
 .CA {
   background: url(../Resources/Images/CA.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;
@@ -133,7 +133,7 @@ hr {
 
 .GB {
   background: url(../Resources/Images/GB.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;
@@ -148,7 +148,7 @@ hr {
 
 .ZA {
   background: url(../Resources/Images/ZA.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;
@@ -163,7 +163,7 @@ hr {
 
 .ES {
   background: url(../Resources/Images/ES.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;
@@ -178,7 +178,7 @@ hr {
 
 .AU {
   background: url(../Resources/Images/AU.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;
@@ -193,7 +193,7 @@ hr {
 
 .DE {
   background: url(../Resources/Images/DE.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;
@@ -208,7 +208,7 @@ hr {
 
 .NL {
   background: url(../Resources/Images/NL.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;
@@ -223,7 +223,7 @@ hr {
 
 .NO {
   background: url(../Resources/Images/NO.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;
@@ -238,7 +238,7 @@ hr {
 
 .IT {
   background: url(../Resources/Images/IT.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;
@@ -253,7 +253,7 @@ hr {
 
 .NZ {
   background: url(../Resources/Images/NZ.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;
@@ -268,7 +268,7 @@ hr {
 
 .PL {
   background: url(../Resources/Images/PL.png);
-  transition: all 1s ease-in-out;
+  transition: all 0.5 ease-in-out;
   cursor: pointer;
   background-position: center;
   background-size: cover;

@@ -6,12 +6,14 @@ import '../Styles/EventInfo.css';
 const EventInfo = () => {
   const apiInfo = useSelector((state) => state.Events.eventInfo?.[0] ?? {})
   const parameters = useSelector((state) => state.Events.parameters)
+
+  console.log(apiInfo)
  
   return(
     <>
       <NavLink to={`../country/${parameters.countryCode}`} id='backArrow'><FaStepBackward style={{fontSize: '20px', color: 'red'}}/> </NavLink>
-      <h1 id='eventName'>{apiInfo.name ?? ''}</h1>
-      <div id='basicInfo'>
+      <h1 id='eventName' >{apiInfo.name ?? ''}</h1>
+      <div id='basicInfo' data-testid='eventInfoContainer'>
         <div id='eventImageContainer'>
           <img alt='event' src={apiInfo.image ?? ''} style={{height: '150px'}}/>
         </div>
