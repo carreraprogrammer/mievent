@@ -15,6 +15,8 @@ const Country = () => {
   const apiParameters = useSelector((state) => state.Events.parameters)
   const [parameters, setParameters] = useState(apiParameters)
 
+  console.log(events)
+
   useEffect(() => {
 
     dispatch(getEvents(parameters));
@@ -22,9 +24,9 @@ const Country = () => {
 
     return (
       <>
-        <div className="countryHeader">
+        <div className="countryHeader" dataTestid='countryName'>
           <div className="rightSide">
-            <h1> EVENTS IN {parameters.countryName}</h1>
+            <h1 > EVENTS IN {parameters.countryName}</h1>
           </div>
           <div className={`countryHeaderImage ${parameters.countryCode}`}></div>
         </div>
@@ -41,7 +43,7 @@ const Country = () => {
         </form>
         <div id='eventsGrid'>
         {events.map((event) => (
-          <NavLink className='eventCard' onClick= {() => dispatch(eventId(event.id))} key={event.id} to={`./${event.id}`}>
+          <NavLink data-testid='eventCard' className='eventCard' onClick= {() => dispatch(eventId(event.id))} key={event.id} to={`./${event.id}`}>
             <div className="eventImageContainer">
               <img src={event.cardImage} alt='event' style={{width: '110px', height: '80px'}}/>
             </div>

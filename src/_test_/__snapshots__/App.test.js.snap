@@ -4,6 +4,7 @@ exports[`Countries renders correctly 1`] = `
 Array [
   <div
     className="countryHeader"
+    dataTestid="countryName"
   >
     <div
       className="rightSide"
