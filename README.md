@@ -83,7 +83,7 @@ After you're finished please remove all the comments and instructions!
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://mievent.netlify.app/)
-- [Live Loom Link](https://www.loom.com/share/a01402d00f014e409928640e576de2a9)
+- [Live Loom Link](https://www.loom.com/share/5dc98396b04247fdb1af89ef9b34eb2f)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
