@@ -83,6 +83,7 @@ After you're finished please remove all the comments and instructions!
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://mievent.netlify.app/)
+- [Live Loom Link](https://www.loom.com/share/a01402d00f014e409928640e576de2a9)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,12 +146,6 @@ Example command:
 - Twitter: [@carreraprog](https://twitter.com/carreraprog)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/daniel-carrera-85a917244/)
 
-👤 **Author2**
-
-- GitHub: [@david63011](https://github.com/david63011/Bookstore/commits?author=david63011)
-- Twitter: [@david630](https://twitter.com/david630)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/dave-underwood-818b54147/)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -159,7 +154,7 @@ Example command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/carreraprogrammer/space-travelers-hub/issues).
+Feel free to check the [issues page](https://github.com/carreraprogrammer/react-capstone/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
