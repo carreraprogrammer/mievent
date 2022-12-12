@@ -105,7 +105,7 @@ hr {
 
 .US {
   background: url(../Resources/Images/US.png);
-  transition: all 0.5 ease-in-out;
+  transition: all 0.8 ease-in-out;
   cursor: pointer;
   background-size: cover;
 }
