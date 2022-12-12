@@ -7,7 +7,7 @@ const About =  () => {
   return (
    <div id='aboutContainer'>
       <div id='imageAboutContainer'>
-        <img id='imageAbout' src={about} />
+        <img id='imageAbout' src={about} alt='profile' />
       </div>
       <div id='textAboutContainer'>
         <h1 id='aboutTitle'>Hello there! I'm Daniel</h1>
