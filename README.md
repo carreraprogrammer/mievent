@@ -1,5 +1,13 @@
 <a name="readme-top"></a>
 
+<div align="center">
+
+  <img src="https://github.com/carreraprogrammer/To-do-List/blob/master/carrera_logo.png?raw=true" alt="logo" width="140"  height="auto" />
+  <br/>
+
+</div>
+
+
 <!--
 HOW TO USE:
 This is an example of how you may give instructions on setting up your project locally.
